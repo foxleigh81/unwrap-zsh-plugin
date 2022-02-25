@@ -13,7 +13,7 @@ into the parent folder.
 
 If you are using oh-my-zsh:
 
-Copy the branch folder to `.oh-my-zsh/custom/plugins`, for example:
+Copy the unwrap folder to `.oh-my-zsh/custom/plugins`, for example:
 
 ```bash
 cd ~/.oh-my-zsh/custom/plugins
