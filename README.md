@@ -1,4 +1,4 @@
-# Unwrap: A plugin for ZSH
+# 📁 Unwrap: A plugin for ZSH
 
 This simple plugin allows you to remove a directory without removing its contents.
 
