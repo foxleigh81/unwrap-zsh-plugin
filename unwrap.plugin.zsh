@@ -5,9 +5,14 @@ unwrap() {
   local this_dir=`basename $PWD`;
   local sys_dirs=`ls /`;
   local in_sys_dir=`echo ${sys_dirs[@]} | grep -o $this_dir | wc -w`;
-  local user_protected_dirs=`cat ~/.unwrap`
-  local in_user_protected_dirs=`echo ${user_protected_dirs[@]} | grep -o $this_dir | wc -w`;
-      
+  
+  if [ -e "$HOME/.unwrap" ]; then
+    local user_protected_dirs=`cat $HOME/.unwrap`;
+    local in_user_protected_dirs=`echo ${user_protected_dirs[@]} | grep -o $this_dir | wc -w`;
+  else;
+    local in_user_protected_dirs=0;
+  fi;  
+  
   # Check for dangerous directories
   if [[ $this_dir == '/' ]]; then
     echo "\033[38;5;124mRoot directory detected. Aborting.";
