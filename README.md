@@ -43,3 +43,9 @@ If your folder is not covered by the above, use `unwrap` with caution.
 or other special character in their name. It will, however, work fine with
 folders that have an underscore in their name.
 
+## Support
+
+If you like this plugin, I'm glad. I just wanted to make something useful :) However, if you wanted to buy me a coffee, I certainly won't say no.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I3I21FRCN)
+
