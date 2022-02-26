@@ -1,4 +1,4 @@
-# Unwrap: A plugin for ZSH
+# 📁 Unwrap: A plugin for ZSH
 
 This simple plugin allows you to remove a directory without removing its contents.
 
@@ -13,11 +13,11 @@ into the parent folder.
 
 If you are using oh-my-zsh:
 
-Copy the branch folder to `.oh-my-zsh/custom/plugins`, for example:
+Copy the unwrap folder to `.oh-my-zsh/custom/plugins`, for example:
 
 ```bash
 cd ~/.oh-my-zsh/custom/plugins
-git clone git@github.com:foxliegh81/unwrap-zsh-plugin.git unwrap
+git clone git@github.com:foxleigh81/unwrap-zsh-plugin.git unwrap
 ```
 
 Enable the plugin in your `.zshrc` file. Edit `~/.zshrc` to activate the plugin, for example: `plugins=(unwrap)`
