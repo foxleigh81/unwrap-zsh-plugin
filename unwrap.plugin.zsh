@@ -49,10 +49,16 @@ unwrap() {
       echo "\n✅ \033[38;5;118mFiles moved, removing directory"
       cd ..
       if rmdir -v "$this_dir" 2>/dev/null; then
-        echo "\n✅ \033[38;5;118mEmpty directory removed."
+        echo "\n✅ \033[38;5;118mEmpty directory removed. Process completed."
       else
-        echo "\n⚠️ \033[38;5;214mDirectory not empty, using rm -rf."
-        command rm -rf "$this_dir"
+        echo "\n⚠️ \033[38;5;214mDirectory not empty, Something went wrong.\n"
+        echo -n "\033[38;5;024mDo you wish to force delete the folder including the files? (y/N)\n\033[0m";
+        read check;
+        if [[ $check == "y" ]]; then
+          echo "\033[38;5;124mRemoving directory forcefully."
+          command rm -rf "$this_dir"
+        fi
+        echo "\n \033[38;5;118mDirectory not removed. Process aborted."
       fi
     fi
     return 1
