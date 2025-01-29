@@ -3,7 +3,7 @@
 # directory and then deletes the current directory
 unwrap() {
   local this_dir=`basename $PWD`;
-  local sys_dirs=`ls /`;
+  local sys_dirs=`command ls /`;
   local in_sys_dir=`echo ${sys_dirs[@]} | grep -o $this_dir | wc -w`;
   
   if [ -e "$HOME/.unwrap" ]; then
@@ -48,7 +48,12 @@ unwrap() {
       fi
       echo "\n✅ \033[38;5;118mFiles moved, removing directory"
       cd ..
-      rm -rf $this_dir
+      if rmdir -v "$this_dir" 2>/dev/null; then
+        echo "\n✅ \033[38;5;118mEmpty directory removed."
+      else
+        echo "\n⚠️ \033[38;5;214mDirectory not empty, using rm -rf."
+        command rm -rf "$this_dir"
+      fi
     fi
     return 1
   fi
